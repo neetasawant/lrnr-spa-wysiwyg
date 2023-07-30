@@ -1,11 +1,15 @@
 import React from "react";
-import PersonAddIcon from '@mui/icons-material/PersonAdd';
-import './Invite.css'
+import PersonAddIcon from "@mui/icons-material/PersonAdd";
+import Typography from "@mui/material/Typography";
 const Invite = () => {
-    return (<div className="inviteTeam">
-    <PersonAddIcon style={{height: 20}}/> 
-    <span> &nbsp;INVITE TEAM MEMBER</span>
- </div>)
-}
+  return (
+    <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap'}}>
+      <PersonAddIcon style={{ height: 15 }} />
+      <Typography variant="overline">
+        INVITE TEAM MEMBER
+      </Typography>
+    </div>
+  );
+};
 
 export default Invite;

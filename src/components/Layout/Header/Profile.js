@@ -3,6 +3,9 @@ import "./Profile.css"; // You can create a separate CSS file for styling
 import { styled } from '@mui/material/styles';
 import Badge from '@mui/material/Badge';
 import Avatar from '@mui/material/Avatar';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import Divider from '@mui/material/Divider';
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
@@ -36,13 +39,18 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 const Profile = () => {
   const [isProfileOn, setIsProfileOn] = useState(false);
 
-  const handleProfileClick = () => {
-    setIsProfileOn(!isProfileOn);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
   };
   return (
     <div>
       <div
-        onClick={handleProfileClick}
+        onClick={handleClick}
       >
         <StyledBadge
           overlap="circular"
@@ -52,13 +60,65 @@ const Profile = () => {
           <Avatar alt="Remy Sharp" style={{height:30, width:30}}/>
         </StyledBadge>
       </div>
-      <div className={`profile ${isProfileOn ? "open" : ""}`}>
-        <ul className="menu">
-          <li>Menu Item 1</li>
-          <li>Menu Item 2</li>
-          <li>Menu Item 3</li>
-        </ul>
-      </div>
+       <Menu
+        anchorEl={anchorEl}
+        id="account-menu"
+        open={open}
+        onClose={handleClose}
+        onClick={handleClose}
+        PaperProps={{
+          elevation: 0,
+          sx: {
+            overflow: 'visible',
+            filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
+            mt: 1.5,
+            '& .MuiAvatar-root': {
+              width: 32,
+              height: 32,
+              ml: -0.5,
+              mr: 1,
+            },
+            '&:before': {
+              content: '""',
+              display: 'block',
+              position: 'absolute',
+              top: 0,
+              right: 14,
+              width: 10,
+              height: 10,
+              bgcolor: 'background.paper',
+              transform: 'translateY(-50%) rotate(45deg)',
+              zIndex: 0,
+            },
+          },
+        }}
+        transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+        anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+      >
+        <MenuItem onClick={handleClose}>
+         Dark Mode
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+         Profile
+        </MenuItem>
+        <Divider />
+        <MenuItem onClick={handleClose}>
+          What's New
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          Help
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          Send Feedback
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          Hints & Shortcuts
+        </MenuItem>
+        <Divider />
+        <MenuItem onClick={handleClose}>
+          Logout
+        </MenuItem>
+      </Menu>
     </div>
   );
 };
