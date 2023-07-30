@@ -1,11 +1,21 @@
 import React from "react";
-import MenuIcon from '@mui/icons-material/Menu';
-const Hamburger = ({onClickHandler}) => {
-    return (
-        <div onClick={onClickHandler}>
-        <MenuIcon style={{height:25, marginTop:'4px'}}/>
-      </div>
-    )
-}
+import MenuIcon from "@mui/icons-material/Menu";
+import { makeStyles } from "@mui/styles";
+const useStyles = makeStyles((theme) => ({
+  icon: {
+    color: theme.palette.mode === "dark" ? "#FFF" : "#000",
+  },
+}));
+const Hamburger = ({ onClickHandler }) => {
+  const classes = useStyles();
+  return (
+    <div onClick={onClickHandler}>
+      <MenuIcon
+        style={{ height: 25, marginTop: "4px" }}
+        className={classes.icon}
+      />
+    </div>
+  );
+};
 
-export default Hamburger
+export default Hamburger;

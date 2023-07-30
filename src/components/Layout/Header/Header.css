@@ -1,10 +1,10 @@
 .header {
-    background-color: #fff;
-    color: #333;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
+  background-color: #fff;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
 }
 
 .subdiv {
@@ -26,52 +26,50 @@
   width: 90%;
 }
 
-
 .navbar-right {
-    display: flex;
-    align-items: center;
-  }
-  
-  .menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .menu li {
-    margin-right: 20px;
-    cursor: pointer;
-  }
-  
-  .menu li:last-child {
-    margin-right: 0;
-  }
+  display: flex;
+  align-items: center;
+}
 
-  .menu1 {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .menu1 li {
-    margin-right: 20px;
-    cursor: pointer;
-  }
- 
-  .navbar-left {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-right: 20px;
-  }
-  
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu li {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.menu li:last-child {
+  margin-right: 0;
+}
+
+.menu1 {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu1 li {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 20px;
+}

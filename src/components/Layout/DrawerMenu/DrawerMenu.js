@@ -7,8 +7,9 @@ import DrawerTreeView from "./DrawerTreeView";
 const useStyles = makeStyles((theme) => ({
   scrollableBox: {
     width: 450,
-    backgroundColor: "#fff",
+    backgroundColor: theme.palette.background.default,
     top: 50,
+    borderRight: "1px solid #F2F2F2",
     bottom: 0,
     left: 0,
     position: "absolute",
