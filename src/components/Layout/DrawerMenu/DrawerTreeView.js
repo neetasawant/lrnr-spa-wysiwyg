@@ -237,7 +237,8 @@ const DrawerTreeView = ({ setIsDrawerOpen }) => {
   };
 
   const handleCopyNode = (copiedNode) => {
-    setTreeData((prevTreeData) => {
+    console.log('copy node!',copiedNode)
+    /* setTreeData((prevTreeData) => {
       const newCopiedNode = { ...copiedNode, id: `${copiedNode.id}-copy` };
       const updatedTreeData = prevTreeData.map((node) =>
         node.id === copiedNode.id
@@ -245,7 +246,7 @@ const DrawerTreeView = ({ setIsDrawerOpen }) => {
           : node
       );
       return updatedTreeData;
-    });
+    }); */
   };
 
   const handleAddChildNode = (parentId, childName, isFile) => {
